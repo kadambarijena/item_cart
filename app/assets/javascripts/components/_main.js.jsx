@@ -3,6 +3,7 @@ window.Main = createReactClass({
       return (
         <div>
           <Header />
+          <AllItems />
         </div>
       );
     }
