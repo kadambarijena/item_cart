@@ -4,16 +4,30 @@ window.AllItems = createReactClass({
     },
   
     componentDidMount() {
-      //console.log('ComponentDidMount');
-      $.getJSON('/api/v1/items.json', function(response) { 
+      $.getJSON('/api/v1/items.json', (response) => { 
+        console.log('data fetched')
         this.setState({ items: response })
+        console.log('render should be called again after setState')
+
       });
     },
 
     render() {
+      console.log('inside render')
+
+      var items = this.state.items.map( (item) => {
+        return (
+          <div key={item.id}>
+            <h3>{item.name}</h3>
+            <p>{item.description}</p>
+          </div>
+        )
+      });
+    
       return (
         <div>
-          <h1>All items component</h1>
+          All Items
+         {items}
         </div>
       );
     }
