@@ -3,7 +3,7 @@ window.Main = createReactClass({
       return (
         <div>
           <Header />
-          <AllItems />
+          <Body />
         </div>
       );
     }
