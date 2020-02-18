@@ -26,8 +26,7 @@ window.AllItems = createReactClass({
     
       return (
         <div>
-          All Items
-         {items}
+          {items}
         </div>
       );
     }
